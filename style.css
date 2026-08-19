@@ -181,67 +181,87 @@ main {
 .bio a:hover {
     text-decoration: none;
 }
+/* =================================
+   MOBILE
+   ================================= */
 
 @media (max-width: 700px) {
 
     main {
         width: calc(100% - 32px);
-
-        padding: 60px 0 45px;
+        padding: 55px 0 45px;
     }
 
+
+    /* Stack everything vertically */
 
     .content-layout {
         display: flex;
-
         flex-direction: column;
 
         width: 100%;
-
-        gap: 45px;
+        gap: 35px;
     }
 
+
+    /* ==============================
+       MOBILE HEADER
+       ============================== */
 
     .identity {
         width: 100%;
 
         position: static;
 
-        display: flex;
+        display: block;
 
-        flex-direction: row;
-
-        justify-content: center;
-
-        align-items: center;
-
-        gap: 25px;
+        text-align: center;
     }
 
+
+    /* Hide photo completely */
 
     .headshot {
-        width: 85px;
-        height: 105px;
-
-        margin: 0;
+        display: none;
     }
 
+
+    /* Remove the desktop vertical-name box */
 
     .vertical-name {
-        width: auto;
+        width: 100%;
         height: auto;
+
+        display: block;
     }
 
+
+    /* Horizontal name */
 
     .vertical-name h1 {
-        font-size: 42px;
+        margin: 0;
+
+        color: var(--accent);
+
+        font-family: Garamond, Georgia, serif;
+
+        font-size: clamp(42px, 12vw, 58px);
+
+        font-weight: 500;
+
+        line-height: 1.05;
+
+        letter-spacing: -0.03em;
+
+        white-space: normal;
 
         transform: none;
-
-        white-space: nowrap;
     }
 
 
+    /* ==============================
+       MOBILE BODY
+       ============================== */
 
     .bio {
         width: 100%;
@@ -249,6 +269,8 @@ main {
 
 
     .bio p {
+        margin-bottom: 28px;
+
         font-size: 15px;
 
         line-height: 1.8;
@@ -259,5 +281,7 @@ main {
 
     .bio p:first-child {
         font-size: 19px;
+
+        line-height: 1.65;
     }
 }
