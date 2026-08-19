@@ -4,7 +4,7 @@
 :root {
     --background: #f7f2e9;
     --text: #5e331a;
-    --muted: #584d42;
+    --muted: #3f3429;
     --accent: #a12d10;
     --line: #d8cfc2;
 }
@@ -245,7 +245,7 @@ main {
 
         font-family: Garamond, Georgia, serif;
 
-        font-size: clamp(42px, 12vw, 58px);
+        font-size: clamp(40px, 12vw, 58px);
 
         font-weight: 500;
 
@@ -278,10 +278,4 @@ main {
         text-align: left;
     }
 
-
-    .bio p:first-child {
-        font-size: 19px;
-
-        line-height: 1.65;
-    }
 }
