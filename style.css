@@ -3,11 +3,12 @@
 
 
 :root {
-    --background: #f7f2e9;
+    --background: #fbf8f2;
     --text: #5e331a;
     --muted: #3f3429;
     --accent: #a12d10;
     --line: #d8cfc2;
+    --link: #0f0156;
 }
 
 
@@ -175,7 +176,7 @@ main {
 
 
 .bio a {
-    color: var(--accent);
+    color: var(--muted);
 
     text-decoration: underline;
 }
