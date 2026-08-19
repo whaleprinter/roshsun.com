@@ -2,20 +2,23 @@
 
 
 :root {
-    --background: #fcf4e9;
-    --text: #583a29;
+    --background: #f7f2e9;
+    --text: #6f442b;
     --muted: #75675a;
-    --accent: #76563f;
+    --accent: #a12d10;
     --line: #d8cfc2;
 }
+
 
 * {
     box-sizing: border-box;
 }
 
+
 html {
     scroll-behavior: smooth;
 }
+
 
 body {
     margin: 0;
@@ -30,214 +33,230 @@ body {
 }
 
 
-/* ==============================
-   Main layout
-   ============================== */
+/* =================================
+   PAGE
+   ================================= */
 
 main {
     width: min(100% - 40px, 900px);
+
     margin: 0 auto;
-    padding: 100px 0 45px;
+
+    padding: 90px 0 60px;
 }
 
 
-/* ==============================
-   Header
-   ============================== */
+/* =================================
+   MAIN TWO-COLUMN LAYOUT
+   ================================= */
 
-header {
-    width: 100%;
-    text-align: center;
-    margin-bottom: 70px;
-    
+.content-layout {
+    display: grid;
+
+    /*
+       Left column = photo + name
+       Right column = biography
+    */
+    grid-template-columns: 150px minmax(0, 620px);
+
+    column-gap: 55px;
+
+    width: 825px;
+    max-width: 100%;
+
+    margin: 0 auto;
+
+    align-items: start;
 }
 
-.eyebrow {
-    margin: 0 0 18px;
+
+/* =================================
+   LEFT IDENTITY COLUMN
+   ================================= */
+
+.identity {
+    width: 150px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    position: sticky;
+    top: 80px;
+}
+
+
+/* =================================
+   HEADSHOT
+   ================================= */
+
+.headshot {
+    display: block;
+
+    width: 120px;
+    height: 150px;
+
+    object-fit: cover;
+
+    border-radius: 0;
+
+    /* More space between photo and name */
+    margin: 0 0 150px;
+
+    filter: sepia(8%);
+}
+
+
+/* =================================
+   VERTICAL NAME
+   ================================= */
+
+.vertical-name {
+    width: 150px;
+    height: 350px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    overflow: visible;
+}
+
+
+.vertical-name h1 {
+    margin: 0;
 
     color: var(--accent);
 
-    font-size: 12px;
-    font-weight: 500;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-}
+    font-family: Garamond, Georgia, serif;
 
-h1 {
-    margin: 0;
+    /* Larger name */
+    font-size: 68px;
 
-    /* color: var(--text); */
-    color : #0a0092;
-    font-family: "Garamond", Georgia, serif;
-    font-size: clamp(48px, 7vw, 78px);
     font-weight: 500;
-    line-height: 1.05;
+
+    line-height: 1;
+
     letter-spacing: -0.03em;
+
+    white-space: nowrap;
+
+    /* Reads from bottom to top */
+    transform: rotate(-90deg);
 }
 
-
-/* ==============================
-   Biography
-   ============================== */
+/* =================================
+   BIOGRAPHY
+   ================================= */
 
 .bio {
-    width: min(100%, 620px);
-    margin: 0 auto;
+    width: 100%;
 }
-/* 
+
+
 .bio p {
     margin: 0 0 30px;
 
     color: var(--muted);
 
     font-size: 16px;
+
     line-height: 1.8;
 
     text-align: justify;
+
     text-justify: inter-word;
-} */
-
-.bio p:first-child {
-    color: var(--text);
-
-    font-family: "Garamond", Georgia, serif;
-    font-size: 20px;
-    line-height: 1.65;
 }
 
 
-/* ==============================
-   Footer
-   ============================== */
 
-footer {
-    width: min(100%, 620px);
-    margin: 75px auto 0;
-    padding-top: 20px;
+.bio a {
+    color: var(--accent);
 
-    border-top: 1px solid var(--line);
-
-    display: flex;
-    justify-content: space-between;
-
-    color: var(--muted);
-
-    font-size: 12px;
-}
-
-a {
-    color: var(--text);
     text-decoration: underline;
 }
 
-footer a:hover {
-    text-decoration: underline;
+
+.bio a:hover {
+    text-decoration: none;
 }
-/* 
-/* 
-/* ==============================
-   Decorative graphics
-   ============================== */
-/* 
-.decoration {
-    position: fixed;
-    z-index: -1;
-
-    width: 150px;
-    height: 150px;
-
-    border: 1px solid var(--line);
-    border-radius: 50%;
-
-    opacity: 0.55;
-
-    pointer-events: none;
-}
-
-.decoration::before {
-    content: "";
-
-    position: absolute;
-
-    inset: 25px;
-
-    border: 1px solid var(--line);
-    border-radius: 50%;
-}
-
-.decoration::after {
-    content: "";
-
-    position: absolute;
-
-    top: 50%;
-    left: -20px;
-
-    width: calc(100% + 40px);
-    height: 1px;
-
-    background: var(--line);
-}
-
-.decoration-left {
-    left: max(25px, calc(50% - 600px));
-    top: 28%;
-}
-
-.decoration-right {
-    right: max(25px, calc(50% - 600px));
-    bottom: 20%;
-
-    transform: rotate(45deg);
-} */ 
-
-
-/* ==============================
-   Mobile
-   ============================== */
 
 @media (max-width: 700px) {
 
     main {
-        width: min(100% - 32px, 900px);
-        padding-top: 65px;
+        width: calc(100% - 32px);
+
+        padding: 60px 0 45px;
     }
 
-    header {
-        margin-bottom: 50px;
+
+    .content-layout {
+        display: flex;
+
+        flex-direction: column;
+
+        width: 100%;
+
+        gap: 45px;
     }
 
-    h1 {
-        font-size: clamp(42px, 13vw, 65px);
+
+    .identity {
+        width: 100%;
+
+        position: static;
+
+        display: flex;
+
+        flex-direction: row;
+
+        justify-content: center;
+
+        align-items: center;
+
+        gap: 25px;
     }
+
+
+    .headshot {
+        width: 85px;
+        height: 105px;
+
+        margin: 0;
+    }
+
+
+    .vertical-name {
+        width: auto;
+        height: auto;
+    }
+
+
+    .vertical-name h1 {
+        font-size: 42px;
+
+        transform: none;
+
+        white-space: nowrap;
+    }
+
 
     .bio {
         width: 100%;
     }
 
+
     .bio p {
         font-size: 15px;
+
+        line-height: 1.8;
+
         text-align: left;
     }
 
+
     .bio p:first-child {
         font-size: 19px;
-    }
-
-    footer {
-        flex-direction: column;
-        gap: 8px;
-    }
-
-    .decoration {
-        opacity: 0.3;
-    }
-
-    .decoration-left {
-        left: -90px;
-    }
-
-    .decoration-right {
-        right: -90px;
     }
 }
