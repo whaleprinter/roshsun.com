@@ -79,7 +79,7 @@ main {
    ================================= */
 
 .identity {
-    width: 150px;
+    width: 100px;
 
     display: flex;
     flex-direction: column;
@@ -97,15 +97,15 @@ main {
 .headshot {
     display: block;
 
-    width: 120px;
-    height: 150px;
+    width: 170px;
+    height: 230px;
 
     object-fit: cover;
 
     border-radius: 0;
 
     /* More space between photo and name */
-    margin: 0 0 190px;
+    margin: 0 0 140px;
 
     filter: sepia(8%);
 }
@@ -136,7 +136,7 @@ main {
     font-family: "Instrument Serif", serif;
 
     /* Larger name */
-    font-size: 100px;
+    font-size: 90px;
 
     font-weight: 400;
 
@@ -189,7 +189,7 @@ main {
    MOBILE
    ================================= */
 
-@media (max-width: 700px) {
+@media (max-width: 1000px) {
 
     main {
         width: calc(100% - 32px);
