@@ -2,6 +2,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Instrument+Serif&display=swap');
 
 
+/* =================================
+   THEME
+   Portable dark-mode pattern: light values live on bare
+   :root. Dark values are defined twice — once inside a
+   prefers-color-scheme media query (automatic, system-driven)
+   and once under :root[data-theme="dark"] (manual override,
+   set by theme.js and persisted to localStorage). The media
+   query is guarded by :not([data-theme="light"]) so a manual
+   "light" choice can override a dark system preference too.
+   To reuse on another site: copy this whole block, swap the
+   six hex values per theme, and drop in theme.js + a
+   .theme-toggle button.
+   ================================= */
+
 :root {
     --background: #f6efe1;
     --text: #5e331a;
@@ -12,8 +26,32 @@
 }
 
 
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+        --background: #241420;
+        --text: #ecdfc8;
+        --muted: #cabaa0;
+        --accent: #d3a15c;
+        --line: #4a3345;
+        --link: #cbb9e8;
+    }
+}
+
+
+:root[data-theme="dark"] {
+    --background: #241420;
+    --text: #ecdfc8;
+    --muted: #cabaa0;
+    --accent: #d3a15c;
+    --line: #4a3345;
+    --link: #cbb9e8;
+}
+
+
 * {
     box-sizing: border-box;
+
+    transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
 }
 
 
@@ -129,6 +167,38 @@ main {
 .site-nav a.active {
     color: var(--accent);
     border-bottom-color: var(--accent);
+}
+
+
+/* =================================
+   THEME TOGGLE — sits below the nav
+   ================================= */
+
+.theme-toggle {
+    margin-top: 28px;
+
+    width: 34px;
+    height: 34px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: transparent;
+    border: 1px solid var(--line);
+    border-radius: 50%;
+
+    color: var(--muted);
+    font-size: 15px;
+    line-height: 1;
+
+    cursor: pointer;
+}
+
+
+.theme-toggle:hover {
+    color: var(--accent);
+    border-color: var(--accent);
 }
 
 
@@ -375,6 +445,11 @@ main {
 
     .site-nav a {
         font-size: 16px;
+    }
+
+
+    .theme-toggle {
+        margin-top: 20px;
     }
 
 

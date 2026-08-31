@@ -7,7 +7,19 @@
     <title>Portfolio — Roshan Sundaram</title>
     <meta name="description" content="Roshan Sundaram — Portfolio of projects.">
 
+    <script>
+        (function () {
+            try {
+                var saved = localStorage.getItem("theme");
+                if (saved === "light" || saved === "dark") {
+                    document.documentElement.setAttribute("data-theme", saved);
+                }
+            } catch (e) {}
+        })();
+    </script>
+
     <link rel="stylesheet" href="style.css">
+    <script src="theme.js" defer></script>
 </head>
 
 <body>
@@ -29,6 +41,10 @@
                     <a href="portfolio.html" class="active">Portfolio</a>
                     <a href="photography.html">Photography</a>
                 </nav>
+
+                <button class="theme-toggle" type="button" aria-label="Switch to dark theme">
+                    <span class="theme-toggle-icon" aria-hidden="true">☾</span>
+                </button>
 
             </aside>
 
