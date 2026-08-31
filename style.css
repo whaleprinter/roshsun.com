@@ -392,13 +392,16 @@ main {
 
 
 .photo-image {
+    /* Most of these are portrait-orientation shots, so scale
+       to fit within the column/viewport without cropping —
+       whichever of width or height binds first wins */
     display: block;
 
-    width: 100%;
+    width: auto;
+    max-width: 100%;
 
+    height: auto;
     max-height: 80vh;
-
-    object-fit: cover;
 
     filter: sepia(8%);
 }
