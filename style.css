@@ -451,8 +451,11 @@ main {
     }
 
 
+    /* .theme-toggle is display:flex (a block-level box), so
+       .identity's text-align:center doesn't reach it — it
+       needs its own auto margins to actually center */
     .theme-toggle {
-        margin-top: 20px;
+        margin: 20px auto 0;
     }
 
 
