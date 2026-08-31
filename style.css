@@ -309,10 +309,10 @@ main {
 
 
 /* =================================
-   PORTFOLIO
+   BUILD
    ================================= */
 
-.portfolio-list {
+.build-list {
     display: flex;
     flex-direction: column;
 
@@ -322,7 +322,7 @@ main {
 }
 
 
-.portfolio-item {
+.build-item {
     display: grid;
 
     grid-template-columns: 200px minmax(0, 1fr);
@@ -333,7 +333,7 @@ main {
 }
 
 
-.portfolio-image {
+.build-image {
     display: block;
 
     width: 100%;
@@ -345,7 +345,7 @@ main {
 }
 
 
-.portfolio-text h2 {
+.build-text h2 {
     margin: 0 0 12px;
 
     color: var(--accent);
@@ -356,7 +356,7 @@ main {
 }
 
 
-.portfolio-text p {
+.build-text p {
     margin: 0;
 
     color: var(--muted);
@@ -370,10 +370,10 @@ main {
 
 
 /* =================================
-   PHOTOGRAPHY
+   PICTURE
    ================================= */
 
-.photo-list {
+.picture-list {
     display: flex;
     flex-direction: column;
 
@@ -383,7 +383,7 @@ main {
 }
 
 
-.photo-block {
+.picture-block {
     display: flex;
     flex-direction: column;
 
@@ -391,7 +391,7 @@ main {
 }
 
 
-.photo-image {
+.picture-image {
     /* Most of these are portrait-orientation shots, so scale
        to fit within the column/viewport without cropping —
        whichever of width or height binds first wins */
@@ -407,7 +407,7 @@ main {
 }
 
 
-.photo-caption {
+.picture-caption {
     margin: 18px 0 0;
 
     color: var(--muted);
@@ -460,15 +460,15 @@ main {
 
 
     /* ==============================
-       MOBILE PORTFOLIO
+       MOBILE BUILD
        ============================== */
 
-    .portfolio-list {
+    .build-list {
         gap: 45px;
     }
 
 
-    .portfolio-item {
+    .build-item {
         display: flex;
         flex-direction: column;
 
@@ -476,7 +476,7 @@ main {
     }
 
 
-    .portfolio-image {
+    .build-image {
         height: auto;
 
         aspect-ratio: 4 / 3;
@@ -484,10 +484,10 @@ main {
 
 
     /* ==============================
-       MOBILE PHOTOGRAPHY
+       MOBILE PICTURE
        ============================== */
 
-    .photo-list {
+    .picture-list {
         gap: 55px;
     }
 

@@ -1,5 +1,5 @@
 .DS_Store
 
 # Raw, full-resolution photo originals — not for the site.
-# Web-optimized copies (resized, EXIF/GPS stripped) live in images/photography/.
+# Web-optimized copies (resized, EXIF/GPS stripped) live in images/picture/.
 /Photography/
