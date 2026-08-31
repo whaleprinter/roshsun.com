@@ -58,10 +58,10 @@ main {
     display: grid;
 
     /*
-       Left column = photo + name
-       Right column = biography
+       Left column = photo + rotated title + nav
+       Right column = page content
     */
-    grid-template-columns: 150px minmax(0, 620px);
+    grid-template-columns: 170px minmax(0, 600px);
 
     column-gap: 55px;
 
@@ -79,7 +79,7 @@ main {
    ================================= */
 
 .identity {
-    width: 100px;
+    width: 150px;
 
     display: flex;
     flex-direction: column;
@@ -87,6 +87,48 @@ main {
 
     position: sticky;
     top: 80px;
+}
+
+
+/* =================================
+   SITE NAV — sits below the rotated title
+   ================================= */
+
+.site-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 14px;
+
+    margin-top: 70px;
+}
+
+
+.site-nav a {
+    color: var(--muted);
+
+    font-family: "Instrument Serif", serif;
+    font-size: 20px;
+
+    text-decoration: none;
+
+    letter-spacing: 0.02em;
+
+    border-bottom: 1px solid transparent;
+
+    padding-bottom: 2px;
+}
+
+
+.site-nav a:hover {
+    color: var(--accent);
+}
+
+
+.site-nav a.active {
+    color: var(--accent);
+    border-bottom-color: var(--accent);
 }
 
 
@@ -108,6 +150,15 @@ main {
     margin: 0 0 80px;
 
     filter: sepia(8%);
+}
+
+
+/* Reserves the same vertical space as .headshot on pages
+   that don't have one, so the nav lands in the same spot
+   on every page */
+.headshot-spacer {
+    height: 230px;
+    margin: 0 0 80px;
 }
 
 
@@ -185,6 +236,117 @@ main {
 .bio a:hover {
     text-decoration: none;
 }
+
+
+/* =================================
+   PORTFOLIO
+   ================================= */
+
+.portfolio-list {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+
+    gap: 60px;
+}
+
+
+.portfolio-item {
+    display: grid;
+
+    grid-template-columns: 200px minmax(0, 1fr);
+
+    column-gap: 28px;
+
+    align-items: start;
+}
+
+
+.portfolio-image {
+    display: block;
+
+    width: 100%;
+    height: 220px;
+
+    object-fit: cover;
+
+    filter: sepia(8%);
+}
+
+
+.portfolio-text h2 {
+    margin: 0 0 12px;
+
+    color: var(--accent);
+
+    font-family: "Instrument Serif", serif;
+    font-size: 32px;
+    font-weight: 400;
+}
+
+
+.portfolio-text p {
+    margin: 0;
+
+    color: var(--muted);
+
+    font-size: inherit;
+    line-height: 1.8;
+
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+
+/* =================================
+   PHOTOGRAPHY
+   ================================= */
+
+.photo-list {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+
+    gap: 90px;
+}
+
+
+.photo-block {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+}
+
+
+.photo-image {
+    display: block;
+
+    width: 100%;
+
+    max-height: 80vh;
+
+    object-fit: cover;
+
+    filter: sepia(8%);
+}
+
+
+.photo-caption {
+    margin: 18px 0 0;
+
+    color: var(--muted);
+
+    font-family: "Instrument Serif", serif;
+    font-style: italic;
+    font-size: 18px;
+
+    text-align: center;
+}
+
+
 /* =================================
    MOBILE
    ================================= */
@@ -194,6 +356,58 @@ main {
     main {
         width: calc(100% - 32px);
         padding: 55px 0 45px;
+    }
+
+
+    /* ==============================
+       MOBILE NAV
+       ============================== */
+
+    .site-nav {
+        flex-direction: row;
+        justify-content: center;
+
+        gap: 24px;
+
+        margin-top: 20px;
+    }
+
+
+    .site-nav a {
+        font-size: 16px;
+    }
+
+
+    /* ==============================
+       MOBILE PORTFOLIO
+       ============================== */
+
+    .portfolio-list {
+        gap: 45px;
+    }
+
+
+    .portfolio-item {
+        display: flex;
+        flex-direction: column;
+
+        gap: 18px;
+    }
+
+
+    .portfolio-image {
+        height: auto;
+
+        aspect-ratio: 4 / 3;
+    }
+
+
+    /* ==============================
+       MOBILE PHOTOGRAPHY
+       ============================== */
+
+    .photo-list {
+        gap: 55px;
     }
 
 
@@ -225,7 +439,8 @@ main {
 
     /* Hide photo completely */
 
-    .headshot {
+    .headshot,
+    .headshot-spacer {
         display: none;
     }
 
